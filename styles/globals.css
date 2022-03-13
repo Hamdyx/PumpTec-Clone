@@ -49,11 +49,25 @@ a.nav-item.active {
 	display: none;
 }
 
+.nave-toggle {
+	display: none;
+}
+
 @media only screen and (max-width: 769px) {
 	div *.nav-item {
 		display: none;
 	}
 	.nav-hamburger {
+		display: inline-block;
+	}
+	.nave-toggle {
+		display: inline-block;
+	}
+	#accordion-panel-1 {
+		display: flex;
+		flex-direction: column;
+	}
+	#accordion-panel-1 .nav-item {
 		display: inline-block;
 	}
 }

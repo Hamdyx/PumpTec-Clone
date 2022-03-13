@@ -10,6 +10,11 @@ import {
 	Divider,
 	Icon,
 	Text,
+	Accordion,
+	AccordionItem,
+	AccordionButton,
+	AccordionPanel,
+	AccordionIcon,
 } from '@chakra-ui/react';
 import { Search2Icon, TimeIcon } from '@chakra-ui/icons';
 import { FaFacebookF, FaInstagram } from 'react-icons/fa';
@@ -38,9 +43,7 @@ export default function Navbar() {
 						</Center>
 						<Search2Icon className="nav-item" />
 
-						<Link as={NextLink} className="nav-hamburger" to={`/`}>
-							<GiHamburgerMenu />
-						</Link>
+						<NavToggle />
 					</HStack>
 				</Box>
 			</Container>
@@ -65,6 +68,31 @@ function TopNav() {
 				</HStack>
 			</Box>
 		</Container>
+	);
+}
+
+function NavToggle() {
+	return (
+		<Accordion className="nave-toggle" allowToggle>
+			<AccordionItem>
+				<h2>
+					<AccordionButton>
+						<Link as={NextLink} className="nav-hamburger" to={`/`}>
+							<GiHamburgerMenu />
+						</Link>
+						<AccordionIcon />
+					</AccordionButton>
+				</h2>
+				<AccordionPanel pb={4}>
+					<NavLink route="home" />
+
+					<NavLink route="about" />
+					<NavLink route="services" />
+					<NavLink route="products" />
+					<NavLink route="contact" />
+				</AccordionPanel>
+			</AccordionItem>
+		</Accordion>
 	);
 }
 
