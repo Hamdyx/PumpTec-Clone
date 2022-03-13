@@ -44,3 +44,16 @@ a.nav-item.active {
 	color: #ee3131;
 	border-bottom: 3px solid #ee3131;
 }
+
+.nav-hamburger {
+	display: none;
+}
+
+@media only screen and (max-width: 769px) {
+	div *.nav-item {
+		display: none;
+	}
+	.nav-hamburger {
+		display: inline-block;
+	}
+}

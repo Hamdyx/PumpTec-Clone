@@ -13,13 +13,14 @@ import {
 } from '@chakra-ui/react';
 import { Search2Icon, TimeIcon } from '@chakra-ui/icons';
 import { FaFacebookF, FaInstagram } from 'react-icons/fa';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
 export default function Navbar() {
 	return (
 		<nav>
 			<TopNav />
 
-			<Container maxW="container.xl" bg="white" centerContent pt={4} pb={4}>
+			<Container maxW="container.2xl" bg="white" centerContent pt={4} pb={4}>
 				<Box w="90%" color="black" layerStyle="navigation">
 					<HStack spacing={8}>
 						<Box w="300px" className="logo-box">
@@ -32,10 +33,14 @@ export default function Navbar() {
 						<NavLink route="services" />
 						<NavLink route="products" />
 						<NavLink route="contact" />
-						<Center height="30px">
+						<Center height="30px" className="nav-item">
 							<Divider orientation="vertical" bg="gray" />
 						</Center>
-						<Search2Icon />
+						<Search2Icon className="nav-item" />
+
+						<Link as={NextLink} className="nav-hamburger" to={`/`}>
+							<GiHamburgerMenu />
+						</Link>
 					</HStack>
 				</Box>
 			</Container>
@@ -45,7 +50,7 @@ export default function Navbar() {
 
 function TopNav() {
 	return (
-		<Container maxW="container.xl" bg="blue.900" pt={2} pb={2} centerContent>
+		<Container maxW="container.2xl" bg="blue.900" pt={2} pb={2} centerContent>
 			<Box w="90%" color="white">
 				<HStack spacing={2}>
 					<TimeIcon />
