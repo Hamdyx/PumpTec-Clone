@@ -18,3 +18,29 @@ a {
 nav {
 	text-transform: uppercase;
 }
+
+a.nav-item {
+	color: #101010;
+	font-weight: 600;
+	transition: all 0.575s;
+	border-bottom: 3px solid #ffffff00;
+}
+
+a.socialLink {
+	transition: all 0.575s;
+}
+
+a.socialLink:hover {
+	color: #ee3131;
+}
+
+a.nav-item:hover {
+	color: #ee3131;
+	text-decoration: none;
+	border-bottom: 3px solid #ee3131;
+}
+
+a.nav-item.active {
+	color: #ee3131;
+	border-bottom: 3px solid #ee3131;
+}
