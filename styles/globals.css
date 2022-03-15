@@ -53,6 +53,15 @@ a.nav-item.active {
 	display: none;
 }
 
+h4 span {
+	font-weight: 200;
+}
+
+.services-list {
+	font-size: 0.8rem;
+	font-weight: 600;
+}
+
 @media only screen and (max-width: 769px) {
 	div *.nav-item {
 		display: none;
