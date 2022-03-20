@@ -1,7 +1,7 @@
-import { Link as NextLink } from 'next/link';
+import Link from 'next/link';
 import {
 	Container,
-	Link,
+	Link as ChakraLink,
 	Flex,
 	Box,
 	VStack,
@@ -49,11 +49,16 @@ export default function Footer() {
 								Social <span>Media</span>
 							</Heading>
 							<HStack>
-								<Link as={NextLink} className="socialLink" to="/facebook">
-									<Icon as={FaFacebookF} />
+								<Link className="socialLink" href="/facebook" passHref>
+									<ChakraLink>
+										<Icon as={FaFacebookF} />
+									</ChakraLink>
 								</Link>
-								<Link as={NextLink} className="socialLink" to="/instagram">
-									<Icon as={FaInstagram} />
+
+								<Link className="socialLink" href="/instagram" passHref>
+									<ChakraLink>
+										<Icon as={FaInstagram} />
+									</ChakraLink>
 								</Link>
 							</HStack>
 						</VStack>
