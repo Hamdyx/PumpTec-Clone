@@ -1,7 +1,7 @@
-import { Link as NextLink } from 'next/link';
+import Link from 'next/link';
 import {
 	Container,
-	Link,
+	Link as ChakraLink,
 	Center,
 	Box,
 	HStack,
@@ -59,11 +59,15 @@ function TopNav() {
 					<TimeIcon />
 					<Text fontSize="xs">We'are Open: Sunday - Thursday 9:00 - 18:00</Text>
 					<Spacer />
-					<Link as={NextLink} className="socialLink" to="/facebook">
-						<Icon as={FaFacebookF} />
+					<Link className="socialLink" href="/facebook" passHref>
+						<ChakraLink>
+							<Icon as={FaFacebookF} />
+						</ChakraLink>
 					</Link>
-					<Link as={NextLink} className="socialLink" to="/instagram">
-						<Icon as={FaInstagram} />
+					<Link className="socialLink" href="/instagram" passHref>
+						<ChakraLink>
+							<Icon as={FaInstagram} />
+						</ChakraLink>
 					</Link>
 				</HStack>
 			</Box>
@@ -77,7 +81,7 @@ function NavToggle() {
 			<AccordionItem>
 				<h2>
 					<AccordionButton>
-						<Link as={NextLink} className="nav-hamburger" to={`/`}>
+						<Link className="nav-hamburger" href={`/`}>
 							<GiHamburgerMenu />
 						</Link>
 						<AccordionIcon />
@@ -99,12 +103,10 @@ function NavToggle() {
 function NavLink({ route }) {
 	let isActive = route === 'home' ? true : false;
 	return (
-		<Link
-			as={NextLink}
-			className={`nav-item ${isActive ? 'active' : ''}`}
-			to={`/${route === 'home' ? '' : route}`}
-		>
-			{route}
+		<Link href={`/${route === 'home' ? '' : route}`} passHref>
+			<ChakraLink className={`nav-item ${isActive ? 'active' : ''}`}>
+				{route}
+			</ChakraLink>
 		</Link>
 	);
 }
