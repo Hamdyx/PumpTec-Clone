@@ -36,7 +36,7 @@ export default function Footer() {
 					<SimpleGrid columns={4} spacing={10}>
 						<VStack spacing={8}>
 							<Box w="250px" className="logo-box">
-								<Image src="/Pumptec-logo-copy.png" alt="Pump Tec Logo" />
+								<Image src="/pump-tec-logo-white.png" alt="Pump Tec Logo" />
 							</Box>
 							<Text>
 								Pumptec was founded in 2004 with a simple philosophy in mind:
