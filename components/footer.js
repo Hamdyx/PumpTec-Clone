@@ -36,55 +36,7 @@ export default function Footer() {
 				pb={4}
 				mt={20}
 			>
-				<Flex color="white" mb={8} className='footer-contact'>
-					<Center w="350px" h="100px" bg="gray.800" px={5}>
-						<HStack w="100%" spacing={8}>
-							<Box w="50px" className="logo-box">
-								<Text>
-									<Icon as={FiMapPin} w={10} h={10} />
-								</Text>
-							</Box>
-							<VStack align="left">
-								<Heading as="h3" size="md">
-									New Maadi, Cairo
-								</Heading>
-								<Text>
-									5 El-lathy St. From El-Naser Street, New Maadi Cairo, Egypt
-								</Text>
-							</VStack>
-						</HStack>
-					</Center>
-					<Center w="350px" h="100px" bg="red.700" px={5}>
-						<HStack w="100%" spacing={8}>
-							<Box w="50px" className="logo-box">
-								<Text>
-									<Icon as={BiPhoneCall} w={10} h={10} />
-								</Text>
-							</Box>
-							<VStack align="left">
-								<Heading as="h3" size="md">
-									+20 100 052 9308
-								</Heading>
-								<Text>Give us a call</Text>
-							</VStack>
-						</HStack>
-					</Center>
-					<Center w="350px" h="100px" bg="red.500" px={5}>
-						<HStack w="100%" spacing={8}>
-							<Box w="50px" className="logo-box">
-								<Text>
-									<Icon as={BsEnvelopeOpen} w={10} h={10} />
-								</Text>
-							</Box>
-							<VStack align="left">
-								<Heading as="h3" size="md">
-									info@pump-tec.net
-								</Heading>
-								<Text>Drop us a linel</Text>
-							</VStack>
-						</HStack>
-					</Center>
-				</Flex>
+				<ContactContainer />
 				<Flex w="90%" layerStyle="footer">
 					<SimpleGrid columns={4} spacing={10}>
 						<VStack spacing={8}>
@@ -151,5 +103,43 @@ export default function Footer() {
 				</Flex>
 			</Container>
 		</footer>
+	);
+}
+
+function ContactContainer() {
+	return (
+		<Flex color="white" mb={8} className="footer-contact">
+			<ContactBox bgColor="gray.800" icon={FiMapPin}>
+				<Heading as="h3" size="md">
+					New Maadi, Cairo
+				</Heading>
+				<Text>5 El-lathy St. From El-Naser Street, New Maadi Cairo, Egypt</Text>
+			</ContactBox>
+			<ContactBox bgColor="red.700" icon={BiPhoneCall}>
+				<Heading as="h3" size="md">
+					+20 100 052 9308
+				</Heading>
+				<Text>Give us a call</Text>
+			</ContactBox>
+			<ContactBox bgColor="red.500" icon={BsEnvelopeOpen}>
+				<Heading as="h3" size="md">
+					info@pump-tec.net
+				</Heading>
+				<Text>Drop us a linel</Text>
+			</ContactBox>
+		</Flex>
+	);
+}
+
+function ContactBox({ children, bgColor, icon }) {
+	return (
+		<Center w="375px" h="100px" bg={bgColor} px={5}>
+			<HStack w="100%" spacing={8}>
+				<Box w="50px" className="logo-box">
+					<Icon as={icon} w={10} h={10} />
+				</Box>
+				<VStack align="left">{children}</VStack>
+			</HStack>
+		</Center>
 	);
 }
