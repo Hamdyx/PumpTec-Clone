@@ -36,7 +36,7 @@ export default function Footer() {
 				pb={4}
 				mt={20}
 			>
-				<Flex color="white" mb={8}>
+				<Flex color="white" mb={8} className='footer-contact'>
 					<Center w="350px" h="100px" bg="gray.800" px={5}>
 						<HStack w="100%" spacing={8}>
 							<Box w="50px" className="logo-box">
