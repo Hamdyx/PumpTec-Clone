@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import {
 	Container,
 	Link as ChakraLink,
@@ -101,11 +102,14 @@ function NavToggle() {
 }
 
 function NavLink({ route }) {
-	let isActive = route === 'home' ? true : false;
+	const router = useRouter();
+	route = route === 'home' ? '' : route;
+	console.log(router.asPath);
+	let isActive = `/${route}` === router.asPath ? true : false;
 	return (
-		<Link href={`/${route === 'home' ? '' : route}`} passHref>
+		<Link href={`/${route}`} passHref>
 			<ChakraLink className={`nav-item ${isActive ? 'active' : ''}`}>
-				{route}
+				{route || 'home'}
 			</ChakraLink>
 		</Link>
 	);
