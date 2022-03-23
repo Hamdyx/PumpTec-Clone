@@ -33,12 +33,7 @@ export default function Navbar() {
 							<Image src="/Pumptec-logo-copy.png" alt="Pump Tec Logo" />
 						</Box>
 						<Spacer />
-						<NavLink route="home" />
-
-						<NavLink route="about" />
-						<NavLink route="services" />
-						<NavLink route="products" />
-						<NavLink route="contact" />
+						<RoutesGroup />
 						<Center height="30px" className="nav-item">
 							<Divider orientation="vertical" bg="gray" />
 						</Center>
@@ -81,30 +76,34 @@ function NavToggle() {
 		<Accordion className="nave-toggle" allowToggle>
 			<AccordionItem>
 				<h2>
-					<AccordionButton>
-						<Link className="nav-hamburger" href={`/`}>
-							<GiHamburgerMenu />
-						</Link>
+					<AccordionButton className="nav-hamburger">
+						<GiHamburgerMenu />
 						<AccordionIcon />
 					</AccordionButton>
 				</h2>
 				<AccordionPanel pb={4}>
-					<NavLink route="home" />
-
-					<NavLink route="about" />
-					<NavLink route="services" />
-					<NavLink route="products" />
-					<NavLink route="contact" />
+					<RoutesGroup />
 				</AccordionPanel>
 			</AccordionItem>
 		</Accordion>
 	);
 }
 
+function RoutesGroup() {
+	return (
+		<>
+			<NavLink route="home" />
+			<NavLink route="about" />
+			<NavLink route="services" />
+			<NavLink route="products" />
+			<NavLink route="contact" />
+		</>
+	);
+}
+
 function NavLink({ route }) {
 	const router = useRouter();
 	route = route === 'home' ? '' : route;
-	console.log(router.asPath);
 	let isActive = `/${route}` === router.asPath ? true : false;
 	return (
 		<Link href={`/${route}`} passHref>
