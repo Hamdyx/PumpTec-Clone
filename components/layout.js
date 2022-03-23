@@ -7,7 +7,7 @@ export default function Layout({ children }) {
 	return (
 		<ChakraProvider theme={theme}>
 			<Navbar />
-			{/* <main>{children}</main> */}
+			<main>{children}</main>
 
 			<Footer />
 		</ChakraProvider>
